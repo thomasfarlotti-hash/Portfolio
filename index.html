@@ -2,57 +2,151 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio Géomatique</title>
+  <title>Portfolio Géomatique - Thomas Farlotti</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: Arial; margin: 40px; background: #f5f5f5; }
-    h1 { color: #2c3e50; }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #1e3a8a);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
     .card {
       background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: 0.2s;
+      display: flex;
+      flex-direction: column;
     }
-    img { width: 100%; border-radius: 5px; }
-    a { color: #2980b9; text-decoration: none; }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .meta {
+      font-size: 0.85em;
+      color: #64748b;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 14px;
+      background: #2563eb;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+
   </style>
 </head>
 
 <body>
 
-<h1>Portfolio Géomatique</h1>
-<p>Projets réalisés sous QGIS</p>
+<header>
+  <h1>Portfolio Géomatique</h1>
+  <p>Thomas Farlotti — Analyse spatiale • Cartographie • SIG</p>
+</header>
 
-<div class="card">
-  <img src="images/Carrières_et_substrats.png">
-  <p>Analyse de l'emplacement des carri&egrave;res tourangelles en fonction de la nature des sols.<br />Les carri&egrave;res de Touraine sont aujourd'hui toutes &agrave; l'abandon, et ont &eacute;t&eacute; pour la plupart revaloris&eacute;es (champignonni&egrave;res, caves &agrave; vin, ...).&nbsp;<br />&Agrave; noter : la pr&eacute;pond&eacute;rance de carri&egrave;res &agrave; tuffeau, plus particuli&egrave;rement le tuffeau jaune de Touraine, fortement utilis&eacute; dans la construction des b&acirc;timents historiques de la r&eacute;gion.</p>
-  <p><strong>Donn&eacute;es :</strong></p>
-  <p>BRGM (Carte g&eacute;ologique)<br />G&eacute;orisques (Cavit&eacute;s souterraines)</p>
-  <a href="pdf/Carrières et substrats.pdf">Voir le PDF</a>
-</div>
-  
-<div class="card">
-  <img src="images/Solde_naturel.png">
-  <p>Analyse du solde naturel, par le biais d'une jointure attributaire des donn&eacute;es brutes de naissances et de d&eacute;c&egrave;s sur l'ann&eacute;e 2025.</p>
-  <p><strong>Source : </strong>INSEE</p>
-  <a href="pdf/Solde naturel.pdf">Voir le PDF</a>
+<div class="container">
+  <div class="grid">
+
+    <div class="card">
+      <img src="images/Carrières_et_substrats.png">
+      <div class="card-content">
+        <p>Analyse de l'emplacement des carri&egrave;res tourangelles en fonction de la nature des sols.<br />Les carri&egrave;res de Touraine sont aujourd'hui toutes &agrave; l'abandon, et ont &eacute;t&eacute; pour la plupart revaloris&eacute;es (champignonni&egrave;res, caves &agrave; vin, ...).&nbsp;<br />&Agrave; noter : la pr&eacute;pond&eacute;rance de carri&egrave;res &agrave; tuffeau, plus particuli&egrave;rement le tuffeau jaune de Touraine, fortement utilis&eacute; dans la construction des b&acirc;timents historiques de la r&eacute;gion.</p>
+        <div class="meta"><strong>Donn&eacute;es :</strong><br /> BRGM (Carte g&eacute;ologique)<br /> G&eacute;orisques (Cavit&eacute;s souterraines)</div>
+        <a class="button" href="pdf/Carrières et substrats.pdf">Voir le PDF</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Solde_naturel.png">
+      <div class="card-content">
+        <p>Analyse du solde naturel, par le biais d'une jointure attributaire des donn&eacute;es brutes de naissances et de d&eacute;c&egrave;s sur l'ann&eacute;e 2025.</p>
+        <div class="meta">
+          <strong>Donn&eacute;es :</strong><br />INSEE
+        </div>
+        <a class="button" href="pdf/Solde naturel.pdf">Voir le PDF</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Distance_Hopital.png">
+      <div class="card-content">
+        <p>Calcul d'isochrones &agrave; partir du r&eacute;seau routier via l'utilisation du module&nbsp;QNEAT3.<br />La r&eacute;pr&eacute;sentation pr&eacute;sente un l&eacute;ger biais car pour des raisons de simplicit&eacute;, seuls les h&ocirc;pitaux de l'Indre-et-Loire ont &eacute;t&eacute; consid&eacute;r&eacute;s dans le calcul. Ainsi, le sud du d&eacute;partement para&icirc;t plus enclav&eacute; qu'il ne l'est r&eacute;ellement.&nbsp;</p>
+        <div class="meta">
+          <strong>Donn&eacute;es :</strong><br />
+          OpenStreetMap
+        </div>
+        <a class="button" href="pdf/Distance Hôpital.pdf">Voir le PDF</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Plan_epandage.png">
+      <div class="card-content">
+        <p>Repr&eacute;sentation des contraintes d'&eacute;pandage sur les parcelles agricoles aux alentours de Ballan-Mir&eacute; et La Riche (37).</p>
+        <p>Les &eacute;l&eacute;ments pris en compte sont indiqu&eacute;s sur le plan.<br />Les zones &agrave; risque de d&eacute;bordement fr&eacute;quents sont class&eacute;es TF+ (Al&eacute;a Tr&egrave;s fort) au PPRI. L'&eacute;pandage n'y est pas n&eacute;cessairement interdit mais peut &ecirc;tre r&eacute;glement&eacute; selon les p&eacute;riodes de l'ann&eacute;e.</p>
+        <div class="meta">
+          <strong>Donn&eacute;es :</strong><br />
+          BD TOPO (Routes, Plans et Cours d'eau, B&acirc;timents)<br>
+          G&eacute;orisques (Zones de d&eacute;bordement fr&eacute;quent)
+        </div>
+        <a class="button" href="pdf/Plan d'épendage.pdf">Voir le PDF</a>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-<div class="card">
-  <img src="images/Distance_Hopital.png">
-  <p>Calcul d'isochrones &agrave; partir du r&eacute;seau routier via l'utilisation du module&nbsp;QNEAT3.<br />La r&eacute;pr&eacute;sentation pr&eacute;sente un l&eacute;ger biais car pour des raisons de simplicit&eacute;, seuls les h&ocirc;pitaux de l'Indre-et-Loire ont &eacute;t&eacute; consid&eacute;r&eacute;s dans le calcul. Ainsi, le sud du d&eacute;partement para&icirc;t plus enclav&eacute; qu'il ne l'est r&eacute;ellement.&nbsp;</p>
-  <p><strong>Donn&eacute;es : </strong>OpenStreetMap</p>
-  <a href="pdf/Distance Hôpital.pdf">Voir le PDF</a>
-</div>
-
-<div class="card">
-  <img src="images/Plan_epandage.png">
-  <p>Repr&eacute;sentation des contraintes d'&eacute;pandage sur les parcelles agricoles aux alentours de Ballan-Mir&eacute; et La Riche (37).</p>
-  <p>Les &eacute;l&eacute;ments pris en compte sont indiqu&eacute;s sur le plan.<br />Les zones &agrave; risque de d&eacute;bordement fr&eacute;quents sont class&eacute;es TF+ (Al&eacute;a Tr&egrave;s fort) au PPRI. L'&eacute;pandage n'y est pas n&eacute;cessairement interdit mais peut &ecirc;tre r&eacute;glement&eacute; selon les p&eacute;riodes de l'ann&eacute;e.</p>
-  <p><strong>Donn&eacute;es :&nbsp;</strong></p>
-  <p>BD TOPO (Routes, Plans et Cours d'eau, B&acirc;timents),<br />G&eacute;orisques (Zones de d&eacute;bordement fr&eacute;quent)</p>
-  <a href="pdf/Plan d'épendage.pdf">Voir le PDF</a>
-</div>
-  
 </body>
 </html>
